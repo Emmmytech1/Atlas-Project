@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { FaHeart } from 'react-icons/fa'; // Import the heart icon from React Icons
 import myimg1 from '../assets/Image -1.png';
 import myimg2 from '../assets/Image -2.png';

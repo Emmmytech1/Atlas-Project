@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import log from "../assets/Frame 1.jpg";
 import { Link } from "react-router-dom";
@@ -53,11 +53,7 @@ const Navbar: React.FC = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const handleLogin = () => {
-    setIsLoggedIn(true); // Set login state to true
-    alert("You are now logged in!");
-    navigate("/"); // Redirect to the home page after login
-  };
+  // Removed unused handleLogin function
 
   const handleLogout = () => {
     setIsLoggedIn(false); // Reset login state
@@ -65,16 +61,6 @@ const Navbar: React.FC = () => {
     navigate("/login");
   };
 
-  const handleDeleteAccount = () => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete your account? This action cannot be undone."
-    );
-    if (confirmDelete) {
-      alert("Your account has been deleted.");
-      setIsLoggedIn(false); // Reset login state
-      navigate("/signup");
-    }
-  };
 
 
   
@@ -126,12 +112,12 @@ const Navbar: React.FC = () => {
               >
                 login
               </Link>
-              {/* <Link
-                to="/logout"
+              <button
+                onClick={handleLogout}
                 className="block w-full text-left px-4 py-2 hover:bg-gray-100"
               >
                 Logout
-              </Link> */}
+              </button>
               <Link
                 to="/signup"
                 className="block w-full text-left px-4 py-2 hover:bg-gray-100"
